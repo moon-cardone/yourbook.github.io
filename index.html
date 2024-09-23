@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>나만의 책 추천 사이트</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        form {
+            margin-top: 20px;
+        }
+        label, select, textarea {
+            display: block;
+            margin-bottom: 10px;
+        }
+        button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>당신의 어려움을 이야기해주세요</h1>
+    <form id="problemForm">
+        <label for="category">카테고리:</label>
+        <select id="category" name="category">
+            <option value="인간관계">인간관계</option>
+            <option value="금전">금전</option>
+            <option value="건강">건강</option>
+            <option value="비즈니스">비즈니스</option>
+        </select>
+        
+        <label for="problem">어려움을 적어주세요:</label>
+        <textarea id="problem" name="problem" rows="4" cols="50"></textarea>
+        
+        <button type="submit">책 추천 받기</button>
+    </form>
+    
+    <div id="recommendation" style="margin-top: 20px;"></div>
+
+    <script>
+        document.getElementById('problemForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            var category = document.getElementById('category').value;
+            var problem = document.getElementById('problem').value;
+            
+            // 여기에 Make.com으로 데이터를 보내는 코드가 들어갈 예정입니다.
+            // 지금은 임시 메시지를 표시합니다.
+            document.getElementById('recommendation').innerHTML = '입력하신 ' + category + ' 카테고리의 문제를 분석 중입니다...';
+        });
+    </script>
+</body>
+</html>
